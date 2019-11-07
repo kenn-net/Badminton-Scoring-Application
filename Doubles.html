@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Doubles </title>
+	<style>
+		body{
+			margin:0;
+		}
+		a{
+			text-decoration: none;
+		}
+		div{
+			display: table;
+			text-align: center;
+			font-family: cursive;
+		}
+		span{
+			display: table-cell;
+			vertical-align:middle;
+			cursor:default;
+		}
+		.Button{
+			border: 1px solid green;
+			font-family: cursive;
+			width: 100px;
+			height: 50px; 
+			padding: 10px;
+			text-align: center;
+			border-radius: 20px 30px;
+			margin: auto;
+		}
+		#Court{
+			z-index: 0;
+			position: relative;
+			margin: auto;
+			margin-top:10px;
+			border: 2px solid black;
+			width: 1324px;
+			height: 612px;
+			padding: 0;
+		}
+		#Div1{
+			z-index: 1;
+			position: absolute;
+			border: 1px solid black;
+			width: 1324px;
+			height: 520px;
+			margin-top: 46px;
+		}
+		#Div2{
+			z-index: 2;
+			position: absolute;
+			border: 1px solid black;
+			width: 1172px;
+			height: 612px;
+			margin-left: 76px;
+		}
+		#shortService1{
+			z-index: 4;
+			position: absolute;
+			border: 1px solid black;
+			height: 612px;
+			width: 198px;
+			margin-left:464px
+		}
+		#shortService1_top{
+			z-index: 5;
+			position: absolute;
+			
+			border: 1px solid black;
+			height: 46px;
+			width: 198px;
+			margin-left:464px
+		}
+		#shortService1_bottom{
+			z-index: 5;
+			position: absolute;
+			border: 1px solid black;
+			height: 46px;
+			width: 198px;
+			margin-left: 464px;
+			margin-top: 566px;
+		}
+		#shortService2{
+			z-index: 4;
+			position: absolute;
+			border: 1px solid black;
+			height: 612px;
+			width: 197px;
+			margin-left: 663px;
+		}
+		#shortService2_top{
+			z-index: 5;
+			position: absolute;
+			border: 1px solid black;
+			height: 46px;
+			width: 198px;
+			margin-left: 662px;
+		}
+		#shortService2_bottom{
+			z-index: 5;
+			
+			position: absolute;
+			
+			border: 1px solid black;
+			height: 46px;
+			width: 198px;
+			margin-left: 662px;
+			margin-top: 566px;
+		}
+		#serviceCourt1_left{
+			z-index: 6;
+			position: absolute;
+			border: 1px solid black;
+			overflow:hidden;
+			width: 388px;
+			height: 260px;
+			margin-top: 46px;
+			margin-left: 76px;
+		}
+		#serviceCourt1_right{
+			z-index: 6;
+			position: absolute;
+			border: 1px solid black;
+			overflow: hidden;
+			width: 388px;
+			height: 260px;
+			margin-top: 306px;
+			margin-left: 76px;
+		}
+		#serviceCourt2_right{
+			z-index: 6;
+			position: absolute;
+			border: 1px solid black;
+			overflow: hidden;
+			width: 388px;
+			height: 260px;
+			margin-top: 46px;
+			margin-left: 860px;
+		}
+		#serviceCourt2_left{
+			z-index: 6;
+			position: absolute;
+			border: 1px solid black;
+			overflow: hidden;
+			width: 388px;
+			height: 260px;
+			margin-top: 306px;
+			margin-left: 860px;
+		}
+		#serviceCourt1_left_doubles{
+			z-index: 7;
+			position: absolute;
+			
+			border: 1px solid black;
+			height: 46px;
+			width: 388px;
+			margin-left:76px
+		}
+		#serviceCourt1_right_doubles{
+			z-index: 7;
+			position: absolute;
+			
+			border: 1px solid black;
+			height: 46px;
+			width: 388px;
+			margin-left:76px;
+			margin-top: 566px;
+		}
+		#serviceCourt2_left_doubles{
+			z-index: 7;
+			position: absolute;
+			
+			border: 1px solid black;
+			height: 46px;
+			width: 388px;
+			margin-left: 860px;
+			margin-top: 566px;
+		}
+		#serviceCourt2_right_doubles{
+			z-index: 7;
+			position: absolute;
+			
+			border: 1px solid black;
+			height: 46px;
+			width: 388px;
+			margin-left: 860px;
+		}
+		#serviceCourt1_left_singles{
+			z-index:7;
+			position: absolute;
+			
+			border: 1px solid black;
+			height: 260px;
+			width: 76px;
+			margin-top: 46px;
+		}
+		#serviceCourt1_right_singles{
+			z-index:7;
+			position: absolute;
+			border: 1px solid black;
+			height: 260px;
+			width: 76px;
+			margin-top: 306px;
+		}
+		#serviceCourt2_right_singles{
+			z-index:7;
+			position: absolute;
+			border: 1px solid black;
+			height: 260px;
+			width: 75px;
+			margin-top: 46px;
+			margin-left: 1248px;
+		}
+		#serviceCourt2_left_singles{
+			z-index:7;
+			position: absolute;
+			border: 1px solid black;
+			height: 260px;
+			width: 75px;
+			margin-top: 306px;
+			margin-left: 1248px;
+		}
+		#navbar{
+			background-color: #456;
+			top:0;
+			z-index:10;
+			margin:0;
+			position:fixed;
+			width: 100%;
+			overflow:hidden;
+		}
+		#navbar a{
+			display:block;
+			float: left;
+			text-align:center;
+			color:white;
+			padding: 10px 20px; 
+		}
+		#navbar a:hover{
+			color:black;
+			background-color:white;
+		}
+		#scorebox{
+			margin:auto;
+			margin-top: 50px;
+			width: 200px;
+			height: 50px;
+			border: 1px solid gold;
+			font-size: 22pt;
+			border-radius: 20px 30px;
+			overflow:hidden;
+		}
+		#scorebox a{
+			text-decoration:none;
+			padding:10px 20px;
+		}
+		#score1{
+			float:left;
+			color:red;
+		}
+		#score2{
+			float:right;
+			color:blue;
+		}
+		#playerSelection_modal{
+			display: none;
+			position:fixed;
+			z-index: 11;
+			left:0;
+			top:0;
+			width:100%;
+			height:100%;
+			overflow:auto;
+			color:white;
+			background-color: rgb(0,0,0);
+			background-color: rgba(0,0,0,0.4);
+		}
+		#playerSelection_content{
+			background-color: rgb(4,4,4);
+			margin: 50px auto;
+			padding: 20px;
+			border: 1px solid #888;
+			border-radius: 10px 15px;
+			width: 400px;
+		}
+		#playerSelection_content a{
+			color:white;
+			border: 1px solid white;
+			padding: 10px 20px;
+			border-radius: 10px;
+		}
+		#win_modal{
+			display: none;
+			position:fixed;
+			z-index: 11;
+			left:0;
+			top:0;
+			width:100%;
+			height:100%;
+			overflow:auto;
+			color:white;
+			background-color: rgb(0,0,0);
+			background-color: rgba(0,0,0,0.4);
+		}
+		#win_content{
+			background-color: rgb(4,4,4);
+			margin: 50px auto;
+			padding: 20px;
+			border: 1px solid #888;
+			border-radius: 10px 15px;
+			width: 700px;
+			font-size: 28pt;
+		}
+		#overall_modal{
+			display: none;
+			position:fixed;
+			z-index: 11;
+			vertical-align:middle;
+			font-size: 36pt;
+			left:0;
+			top:0;
+			width:100%;
+			height:100%;
+			overflow:auto;
+			color:white;
+			background-color: rgb(0,0,0);
+		}
+	</style>
+	<script>
+		var Player1_1="Player1";
+		var Player1_2="Player2";
+		var Player2_1="Player3";
+		var Player2_2="Player4";
+		var Player1=Player1_1.concat(" and ",Player1_2);//Group name
+		var Player2=Player2_1.concat(" and ",Player2_2);//Group name
+		var Player1_score=0;
+		var Player2_score=0;
+		var Player1_last_serve="none";
+		var Player2_last_serve="none";
+		var left_or_right="right";//left or right?
+		var which_side="court1";//who serves
+		var set_number=1;
+		var winner=Player1;
+		var Player1_win=0;
+		var Player2_win=0;
+		var consecutive = 0;
+		var turn_winner = (which_side=="court1") ? "court1" : "court2";// court1 or court2
+		var prev_winner = (which_side=="court1") ? "court1" : "court2";
+		var set_limit=3;
+		var condemn=false;
+		
+		
+		function next_turn(){//Display values on score box and checks if win or not
+			document.getElementById("temp").innerHTML = "Standing ".concat(Player1_win.toString()," : ", Player2_win.toString());
+			document.getElementById("score1").innerHTML = Player1_score.toString();
+			document.getElementById("score2").innerHTML = Player2_score.toString();
+			if (Player1_score>29){
+				set_number+=1;
+				winner=Player1;
+				Player1_win+=1;
+				condemn=true;
+				win_gateOpenerBot(Player1);
+			}else if(Player2_score>29){
+				set_number+=1;
+				winner=Player2;
+				Player2_win+=1;
+				condemn=true;
+				win_gateOpenerBot(Player2);
+			}else if(Player1_score > 20 || Player2_score > 20){
+				if (Player1_score-Player2_score>1){
+					set_number+=1;
+					winner=Player1;
+					Player1_win+=1;
+					condemn=true;
+					win_gateOpenerBot(Player1);
+				}else if (Player2_score-Player1_score>1){
+					set_number+=1;
+					winner=Player2;
+					Player2_win+=1;
+					condemn=true;
+					win_gateOpenerBot(Player2);
+				}
+			}
+		}
+		function PlayerSwitcher(){//Switch court player
+			var y = Player1_1;
+			var z = Player1_2;
+			Player1_1=Player2_1;
+			Player1_2=Player2_2;
+			Player2_1=y;
+			Player2_2=z;
+		}
+		function PlayerSwitcher_v2(s){//Switch player of same side
+			if(s==Player1){
+				var x = Player1_1;
+				Player1_1 = Player1_2;
+				Player1_2 = x;
+			}if(s==Player2){
+				var y = Player2_1;
+				Player2_1 = Player2_2;
+				Player2_2 = y;
+			}
+		}
+		function WinSwitcher(){//Switch win number
+			var z = Player1_win;
+			Player1_win=Player2_win;
+			Player2_win=z;
+		}
+		function CourtSwitcher(){//Switch Court
+			if(winner==Player1){
+				which_side="court2";
+			}else{
+				which_side="court1";
+			}
+		}
+		function next_game(){//For next game
+			left_or_right="right";
+			Player1_score=0;
+			Player2_score=0;
+			prev_winner = (which_side=="court1") ? "court1" : "court2";// court1 or court2
+			set_number_show();
+			next_turn();
+			CourtSwitcher();
+			PlayerSwitcher();
+			WinSwitcher();
+			document.getElementById("temp").innerHTML = Player1_win.toString().concat(" : ", Player2_win.toString());
+			cleansingBot_v2();
+			nameBot_v2();
+			turnIndicator();
+			Player1_last_serve="none";
+			Player2_last_serve="none";
+		}
+		function turnIndicator(){//colors which side serves
+			var x = document.getElementsByClassName("doubles ".concat(which_side," ",left_or_right));
+			for(i=0; i<x.length; i++){
+				x[i].style.backgroundColor = (which_side=="court1") ? "rgba(200,0,0,0.6)" : "rgba(0,0,200,0.6)";//red if court1 and blue if court2
+			}
+		}
+		function cleansingBot_v2(){//cleans names and colors
+			var x = document.getElementsByClassName("position");
+			for(i=0; i<x.length; i++){
+				x[i].innerHTML="";
+			}
+			
+			var y = document.getElementsByClassName("doubles");
+			for(j=0; j<y.length; j++){
+				y[j].style.backgroundColor = "white"; 
+			}
+		}
+		function cleansingBot_v3(s){//cleans only one side // court1 or court2
+			var x = document.getElementsByClassName("position ".concat(s));
+			for(i=0; i<x.length; i++){
+				x[i].innerHTML="";
+			}
+			
+		}
+		function cleansingBot_v4(){//cleans all// doesn't leave stains // good soap
+			var y = document.getElementsByClassName("doubles");
+			for(j=0; j<y.length; j++){
+				y[j].style.backgroundColor = "white"; 
+			}
+		}
+		function nameBot_v2(){//puts names on field
+			document.getElementsByClassName("position court1 ".concat(left_or_right))[0].innerHTML=Player1_1;
+			document.getElementsByClassName("position court1 ".concat(left_and_right_inverter(left_or_right)))[0].innerHTML=Player1_2;
+			document.getElementsByClassName("position court2 ".concat(left_or_right))[0].innerHTML=Player2_1;
+			document.getElementsByClassName("position court2 ".concat(left_and_right_inverter(left_or_right)))[0].innerHTML=Player2_2;
+		}
+		function nameBot_v3(s,p){//puts names on one side
+			if(p==Player1){
+				if(consecutive==2){
+					PlayerSwitcher_v2(Player1);
+				}
+				document.getElementsByClassName("position ".concat(s," ",left_or_right))[0].innerHTML=Player1_1;
+				document.getElementsByClassName("position ".concat(s," ",left_and_right_inverter(left_or_right)))[0].innerHTML=Player1_2;
+				if(Player1_last_serve!=Player1_1){
+					document.getElementsByClassName("position ".concat(s," ",left_or_right))[0].innerHTML=Player1_2;
+					document.getElementsByClassName("position ".concat(s," ",left_and_right_inverter(left_or_right)))[0].innerHTML=Player1_1;
+				}
+				
+			}else{
+				if(consecutive==2){
+					PlayerSwitcher_v2(Player2);
+				}
+				document.getElementsByClassName("position ".concat(s," ",left_or_right))[0].innerHTML=Player2_1;
+				document.getElementsByClassName("position ".concat(s," ",left_and_right_inverter(left_or_right)))[0].innerHTML=Player2_2;
+				if(Player2_last_serve!=Player2_1){
+					document.getElementsByClassName("position ".concat(s," ",left_or_right))[0].innerHTML=Player2_2;
+					document.getElementsByClassName("position ".concat(s," ",left_and_right_inverter(left_or_right)))[0].innerHTML=Player2_1;
+				}
+			}
+		}
+		function left_and_right_inverter(s){
+			return (s=="left") ? "right" : "left";
+		}
+		function playerSelection_gateOpenerBot(){//displays the player input form
+			document.getElementById("playerSelection_modal").style.display="block";
+		}
+		function win_gateOpenerBot(s){//displays who wins
+			if(Player1_win== Math.ceil(set_limit/2) || Player2_win==Math.ceil(set_limit/2)){
+				document.getElementById("overall_modal").innerHTML=s.concat(" is the OVERALL WINNER!!!");
+				document.getElementById("overall_modal").style.display="block";
+			}else{
+				document.getElementById("win_content").innerHTML=s.concat(" wins the bout");
+				document.getElementById("win_modal").style.display="block";
+			}
+			
+		}
+		//Copy Pasted Function with minor edits. It basically exits the popup form if outside borders is clicked
+		///Ask Mr. Internet for more info
+		window.onclick = function(event) {
+			if (event.target == document.getElementById("playerSelection_modal")) {
+				document.getElementById("playerSelection_modal").style.display = "none";
+				nameChangeBot_v2();
+			}
+			else if (event.target == document.getElementById("win_modal")){
+				document.getElementById("win_modal").style.display = "none";
+				next_game();
+				condemn=false;
+			}
+		}
+		//
+		function odd_or_even(s){//switches the value of left_or_right variable
+			left_or_right = (s%2==0) ? "right" : "left";
+		}
+		//Unedited Copy Pasted Function
+		///Apparently returns true if input is a null or whitespace
+		function isNullOrWhitespace( input ) {
+			return !input || !input.trim();
+		}
+		//
+		function nameChangeBot_v2(){//function inside input form
+			var x1 = document.getElementById("Player1_1_name_input").value;
+			var x2 = document.getElementById("Player1_2_name_input").value;
+			var y1 = document.getElementById("Player2_1_name_input").value;
+			var y2 = document.getElementById("Player2_2_name_input").value;
+			Player1_1= ((!isNullOrWhitespace(x1)) ? x1 : Player1_1);
+			Player1_2= ((!isNullOrWhitespace(x2)) ? x2 : Player1_2);
+			Player2_1= ((!isNullOrWhitespace(y1)) ? y1 : Player2_1);
+			Player2_2= ((!isNullOrWhitespace(y2)) ? y2 : Player2_2);
+			document.getElementById("playerSelection_modal").style.display="none";
+			turnIndicator();
+			nameBot_v2();
+		}
+		function player_inverter(s){//Player2 if Player1 and vice versa
+			return (s==Player1) ? Player2 : Player1;
+		}
+		function court1_score(){//events that happen if court1 scores
+			Player1_score+=1;
+			prev_turn_winner=turn_winner;
+			turn_winner="court1";
+			
+			Player1_last_serve=document.getElementsByClassName("position ".concat("court1"," ",left_or_right))[0].innerHTML;
+			Player2_last_serve="none";
+			
+			if(prev_turn_winner!=turn_winner){
+				consecutive=0;
+			}
+			consecutive+=1;
+			next_turn();
+			document.getElementById("a").innerHTML=consecutive;
+			odd_or_even(Player1_score);
+			which_side="court1";
+			if(prev_turn_winner=="court1"){
+				cleansingBot_v3("court1");
+				nameBot_v3("court1",Player1);
+			}
+			cleansingBot_v4();
+			turnIndicator();
+			
+			
+		}
+		function court2_score(){//events that happen if court2 scores
+			Player2_score+=1;
+			prev_turn_winner=turn_winner;
+			turn_winner="court2";
+			
+			Player2_last_serve=document.getElementsByClassName("position ".concat("court2"," ",left_or_right))[0].innerHTML;
+			Player1_last_serve="none";
+			
+			if(prev_turn_winner!=turn_winner){
+				consecutive=0;
+			}
+			consecutive+=1;
+			document.getElementById("a").innerHTML=consecutive;
+			next_turn();
+			odd_or_even(Player2_score);
+			which_side="court2";
+			if(prev_turn_winner=="court2"){
+				cleansingBot_v3("court2");//clean
+				nameBot_v3("court2",Player2);//change player
+			}
+			cleansingBot_v4();
+			turnIndicator();
+			
+		}
+		function serving_sideBot_v2(s){//Indicates whether or court1 or court2
+			which_side=s;
+		}
+		window.onload=function(){//initial onload functs
+			playerSelection_gateOpenerBot();
+			next_turn();
+			set_number_show();
+			document.onkeyup=function(e){
+				var keyCode = (window.event) ? event.keyCode : e.which;
+				if (keyCode==70 && condemn==false){
+					court1_score();
+					
+				}else if(keyCode==74 && condemn==false){
+					court2_score();
+					
+				}
+			}
+		}
+		window.onbeforeunload = function() {//before reload
+			return true;
+		}
+		function set_number_show(){//Set number
+			document.getElementById("set").innerHTML="Set: ".concat(set_number.toString());
+		}
+		function set_limit_change(s){
+			set_limit = s;
+		}
+	</script>
+</head>
+<body>
+	<!--Menu Start-->
+	<div id="navbar">
+		<a href="Main Menu.html"> Back </a>
+		<a href="#" id="a"> </a>
+		<a href="#" id="temp">win test </a>
+		<a href="#" onclick="set_number_show()" id="set"> Set Number </a>
+		<!--<span style="float:right;color: gold;width: 500px;"><marquee behavior="alternate"> Worry not! for this is just a temporary marquee placement!</marquee></span>-->
+	</div>
+	<!--End-->
+	<!--Modal Box-->
+	<div id="playerSelection_modal">
+		<div id="playerSelection_content"> 
+			<p> Player Name Input </p><br>
+			<div style="float:left;">
+				<label> Players on the Left </label><br><br>
+				<input type="text" id="Player1_2_name_input" placeholder="Player 2"/><br><br>
+				<input type="text" id="Player1_1_name_input" placeholder="Player 1"/><br><br>
+			</div>
+			<div style="float:right;">
+				<label> Players on the Right </label><br><br>
+				<input type="text" id="Player2_1_name_input" placeholder="Player 3"/><br><br>
+				<input type="text" id="Player2_2_name_input" placeholder="Player 4"/><br><br>
+			</div>
+			<br><br><br><br><br><br><br><br>
+			<label> Serving Side: </label><!--Actually indicates which side of the court serves, whether court1 or court2-->
+			<input type="radio" name="side" value="court1" onclick="serving_sideBot_v2(this.value)" checked/> Left
+			<input type="radio" name="side" value="court2" onclick="serving_sideBot_v2(this.value)"/> Right<br><br><br>
+			<label> Number of Sets: </label>
+			<input type="radio" name="setNumber" value=3 onclick="set_limit_change(this.value)" checked/> 3
+			<input type="radio" name="setNumber" value=5 onclick="set_limit_change(this.value)"/> 5<br><br><br>
+			<a href="#" onclick="nameChangeBot_v2()"> Submit </a><br><br>
+		</div>
+	</div>
+	<!--End-->
+	<!--Modal Box Win-->
+	<div id="win_modal">
+		<div id="win_content">
+			You Win!!
+		</div>
+	</div>
+	<!--End-->
+	<!--Modal Overall-->
+	<div id="overall_modal">
+		Please Contact an aspiring IT professional if you see this
+	</div>
+	<!--End-->
+<!------------------------------------------------------------------------------------------------------>
+	<!--Score Box Start-->
+	<div id="scorebox">
+		<a href="#" id="score1" onclick="court1_score()"> Please Contact an IT professional if you see this text </a>
+		<span>&nbsp : &nbsp </span>
+		<a href="#" id="score2" onclick="court2_score()"> Please Contact an IT professional if you see this text </a>
+	</div>
+	<!--End-->
+<!------------------------------------------------------------------------------------------------------>
+	<!--Court Start-->
+	<div id="Court"> 
+		<div id="Div1"> </div>
+		<div id="Div2">	</div>
+		<!--Court Side #1-->
+			<div id="serviceCourt1_left" class="singles doubles court1 left">
+				<span class="position court1 left"> </span>
+			</div>
+				<div id="serviceCourt1_left_doubles" class="doubles court1 left"> </div>
+				<div id="serviceCourt1_left_singles" class="singles court1 left"> </div>
+			<div id="serviceCourt1_right" class="singles doubles court1 right"> 
+				<span class="position court1 right"> </span>
+			</div>
+				<div id="serviceCourt1_right_doubles" class="doubles court1 right"> </div>
+				<div id="serviceCourt1_right_singles" class="singles court1 right"> </div>
+					<!--Short Service #1-->
+					<div id="shortService1"> </div>
+						<div id="shortService1_top"> </div>
+						<div id="shortService1_bottom"> </div>
+					<!--End-->
+		<!--End-->
+		<!--Court Side #2-->
+			<div id="serviceCourt2_right" class="singles doubles court2 right"> 
+				<span class="position court2 right"> </span>
+			</div>
+				<div id="serviceCourt2_right_doubles" class="doubles court2 right"> </div>
+				<div id="serviceCourt2_right_singles" class="singles court2 right"> </div>
+			<div id="serviceCourt2_left" class="singles doubles court2 left"> 
+				<span class="position court2 left"> </span>
+			</div>
+				<div id="serviceCourt2_left_doubles" class="doubles court2 left"> </div>
+				<div id="serviceCourt2_left_singles" class="singles court2 left"> </div>
+					<!--Short Service #2-->
+					<div id="shortService2"> </div>
+						<div id="shortService2_top"> </div>
+						<div id="shortService2_bottom"> </div>
+					<!--End-->
+		<!--End-->
+	</div>
+	
+	
+</body>
+</html>
