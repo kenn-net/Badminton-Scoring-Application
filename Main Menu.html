@@ -2,26 +2,42 @@
 <html>
 <head><title> Badminton UwU </title>
 <style>
+body{
+	background-image: linear-gradient(to right, rgb(123,150,255), rgba(255,126,126, 0.5) );
+			
+}
 .Button{
-	border: 1px solid green;
+	border: 1px solid white;
 	font-family: cursive;
 	width: 100px;
 	height: 50px; 
 	padding: 10px;
+	margin: 10px;
 	text-align: center;
 	border-radius: 20px 30px;
-	margin: auto;
+	background-image: linear-gradient(to right, rgba(123,150,255,.3), rgba(255,126,126, 0.4));
 }
 a{
-	text-decoration: none
+	text-decoration: none;
 }
 #Main{
-	border: 2px solid cornflowerblue;
+	border: 1px solid white;
 	padding: 40px;
-	width: 300px; 
-	margin: auto;
-	margin-top: 100px;
+	width: 500px;
+	margin: 200px auto;
+	display:flex;
+	align-items: center;
 	border-radius: 20px 30px 10px;
+	background-color:rgba(250,250,250,.8);
+}
+#Title{
+	font-family:cursive;
+	font-size: 40pt;
+	color:rgba(113,140,245,.8);
+	flex: 0 0 70%;
+}
+#Buttons{
+	flex: 1;
 }
 </style>
 
@@ -29,8 +45,11 @@ a{
 </head>
 <body>
 	<div id="Main">
-		<a href="Singles.html"><div class="Button"><p> Singles </p></div></a>
-		<a href="Doubles.html"><div class="Button"><p> Doubles </p></div></a>
+		<div id="Title">BadminScore</div>
+		<div id="Buttons">
+			<a href="Singles.html"><div class="Button"><p> Singles </p></div></a>
+			<a href="Doubles.html"><div class="Button"><p> Doubles </p></div></a>
+		</div>
 	</div>
 </body>
 
