@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head><title> Badminton UwU </title>
+<head><title> Main Menu </title>
 <style>
 body{
-	background-image: linear-gradient(to right, rgb(123,150,255), rgba(255,126,126, 0.5) );
-			
+	background-color:rgb(123,150,255);/*rgba(255,126,126, 0.1) )*/
+	background-image: url('logo1.png');
+	background-position: center;
 }
 .Button{
 	border: 1px solid white;
@@ -22,7 +23,7 @@ a{
 }
 #Main{
 	border: 1px solid white;
-	padding: 40px;
+	padding: 50px;
 	width: 500px;
 	margin: 200px auto;
 	display:flex;
@@ -36,6 +37,11 @@ a{
 	color:rgba(113,140,245,.8);
 	flex: 0 0 70%;
 }
+#Subtitle{
+	font-family:century gothic;
+	font-size: 28pt;
+	padding-top:-15px;
+}
 #Buttons{
 	flex: 1;
 }
@@ -45,7 +51,7 @@ a{
 </head>
 <body>
 	<div id="Main">
-		<div id="Title">BadminScore</div>
+		<div id="Title">Badminton<div id="Subtitle">SCORING APP</div></div>
 		<div id="Buttons">
 			<a href="Singles.html"><div class="Button"><p> Singles </p></div></a>
 			<a href="Doubles.html"><div class="Button"><p> Doubles </p></div></a>
