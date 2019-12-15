@@ -222,7 +222,7 @@
 			margin-left: 1248px;
 		}
 		#navbar{
-			background-color: #456;
+			background-image: linear-gradient(to right, #000066), #FF5050)
 			top:0;
 			z-index:10;
 			margin:0;
@@ -437,7 +437,7 @@
 		function turnIndicator(){//colors which side serves
 			var x = document.getElementsByClassName("doubles ".concat(which_side," ",left_or_right));
 			for(i=0; i<x.length; i++){
-				x[i].style.backgroundColor = (which_side=="court1") ? "rgba(200,0,0,0.6)" : "rgba(0,0,200,0.6)";//red if court1 and blue if court2
+				x[i].style.backgroundColor = (which_side=="court1") ? "rgba(255,0,0,0.6)" : "rgba(0,0,200,0.6)";//red if court1 and blue if court2
 			}
 		}
 		function cleansingBot_v2(){//cleans names and colors
