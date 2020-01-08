@@ -4,19 +4,23 @@
 <style>
 body{
 	background-color:rgb(123,150,255);/*rgba(255,126,126, 0.1) )*/
-	background-image: url('logo1.png');
+	background-image: url('logomain.png');
+	background-size: cover;
+	background-attachment: fixed;
 	background-position: center;
 }
 .Button{
 	border: 1px solid white;
-	font-family: cursive;
+	font-family:  Trebuchet MS;
+	font-size: 13pt;
+	color: white;
 	width: 100px;
 	height: 50px; 
 	padding: 10px;
 	margin: 10px;
 	text-align: center;
 	border-radius: 20px 30px;
-	background-image: linear-gradient(to right, rgba(123,150,255,.3), rgba(255,126,126, 0.4));
+	background-image: linear-gradient(to right, #5F6ED9, #FF5050);
 }
 a{
 	text-decoration: none;
@@ -25,22 +29,28 @@ a{
 	border: 1px solid white;
 	padding: 50px;
 	width: 500px;
-	margin: 200px auto;
+	margin: 250px 200px 300px 550px;
 	display:flex;
 	align-items: center;
-	border-radius: 20px 30px 10px;
+	border-radius: 20px 40px 10px;
 	background-color:rgba(250,250,250,.8);
 }
+@font-face {
+	font-family: quenda;
+	src: url(quenda-medium.otf);
+}
+
 #Title{
-	font-family:cursive;
+	font-family:quenda;
 	font-size: 40pt;
-	color:rgba(113,140,245,.8);
+	color:#331062;
 	flex: 0 0 70%;
 }
 #Subtitle{
-	font-family:century gothic;
-	font-size: 28pt;
+	font-family: Trebuchet MS;
+	font-size: 22pt;
 	padding-top:-15px;
+	color: rgba(113,140,245,1);
 }
 #Buttons{
 	flex: 1;
@@ -51,10 +61,10 @@ a{
 </head>
 <body>
 	<div id="Main">
-		<div id="Title">Badminton<div id="Subtitle">SCORING APP</div></div>
+		<div id="Title">BadminScore<div id="Subtitle">Badminton Scoring App</div></div>
 		<div id="Buttons">
-			<a href="Singles.html"><div class="Button"><p> Singles </p></div></a>
-			<a href="Doubles.html"><div class="Button"><p> Doubles </p></div></a>
+			<a href="Singles.html"><div class="Button"><p> SINGLES </p></div></a>
+			<a href="Doubles.html"><div class="Button"><p> DOUBLES </p></div></a>
 		</div>
 	</div>
 </body>
